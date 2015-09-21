@@ -1,0 +1,13 @@
+
+table{
+  display:inline-block;
+}
+table tr td{
+  text-align: left;
+}
+table tr td.right{
+  text-align: right;
+}
+table tr td.hr{
+  border-bottom: solid 1px #5D6569;
+}
