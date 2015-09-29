@@ -2,32 +2,32 @@
 <html ng-app="creativea">
 <head>
   <title>Creative Agency - bs2</title></title>
+  <link href="/favicon.png" rel="icon" type="image/x-icon">
   <link href="//fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
   <link href='http://fonts.googleapis.com/css?family=Roboto+Mono:100&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
 
   <link href="/css/bs2.css" rel="stylesheet" type="text/css">
   <link href="/css/bs2.inputs.css" rel="stylesheet" type="text/css">
 
-  <script language="JavaScript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
-</head>
-<body>
-  <script type="text/javascript" src="js/app.js"></script>
+  <script language="JavaScript" src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+  <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-route.js"></script>
+
+  <script type="text/javascript" src="js/services.js"></script>
+  <script type="text/javascript" src="js/factories.js"></script>
   <script type="text/javascript" src="js/controllers.js"></script>
   <script type="text/javascript" src="js/directives.js"></script>
-  <div class='sidebar'>
-    sidebar
+  <script type="text/javascript" src="js/filters.js"></script>
+  <script type="text/javascript" src="js/app.js"></script>
+</head>
+<body>
+  <div class='sidebar' ng-controller="SidebarController as sidebar">
+    sidebar {{sidebar.timeNow | date:'dd-MM-yyyy'}}
   </div>
-  <div class="container" ng-controller="PageController as page">
-    <div class="title">
-      <b>creative</b><sub>A</sub>
-    </div>
-    <div class="quote">
-      {{page.data.quote}}
-    </div>
-    <i class="author">{{page.data.author}}</i>
-    <button ng-show="page.data.canShow">GO!</button>
+  <div class="container">
+    <div ng-view></div>
   </div>
 </body>
 </html>
