@@ -16,7 +16,7 @@
       canShow:true
     };
   });
-  app.controller('SidebarController',function(){
+  app.controller('NavController',function(){
     var vm=this;
     vm.timeNow=new Date();
   });
